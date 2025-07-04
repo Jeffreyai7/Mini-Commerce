@@ -1,0 +1,19 @@
+[
+  {
+    "id": "1",
+    "name": "Wireless Headphones",
+    "slug": "wireless-headphones",
+    "price": 59.99,
+    "image": "/images/headphones.jpg",
+    "description": "High-quality wireless headphones with noise cancellation."
+  },
+  {
+    "id": "2",
+    "name": "Bluetooth Speaker",
+    "slug": "bluetooth-speaker",
+    "price": 29.99,
+    "image": "/images/speaker.jpg",
+    "description": "Compact speaker with excellent sound quality."
+  }
+  
+]

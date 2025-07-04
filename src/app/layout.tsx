@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mini Commerce ",
   description: "Mini Commerce - Your one-stop shoe destination. Athletic, casual, formal & designer shoes. Fast shipping & easy returns. Shop now!",
-  keywords: ["addidas, nike, brooks, nath"]
+  keywords: ["addidas, nike, brooks, nath"],
 
    authors: [{ name: 'Mini Commerce Dveelopers', url: 'https://example.com' }],
 
@@ -45,10 +45,13 @@ export const metadata: Metadata = {
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon.ico', type: 'image/x-icon' },
     ],
- 
+    
+  },
+  
   manifest: '/site.webmanifest',
 
-};
+
+}
 
 export default function RootLayout({
   children,

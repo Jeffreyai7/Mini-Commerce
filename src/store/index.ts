@@ -51,3 +51,4 @@ const useNavbarStore = create<NavbarState>((set) => ({
 }));
 
 export { useCartStore, useNavbarStore };
+

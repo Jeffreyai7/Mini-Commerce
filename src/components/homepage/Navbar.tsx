@@ -19,7 +19,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between">
           <Link href="/" className="w-20">
             <img
-              src="/images/logo.png"
+              src="/images/logo.jpg"
               alt="Logo"
               className="w-full relative z-50"
             />
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
               <div className="pt-2 flex flex-col space-y-3">
                 <Link
                   href="login"
-                  className=" dark:bg-[#1D9EE2] text-white dark:text-gray-200 rounded-lg text-center hover:text-[#2B3089] dark:hover:text-[#1D9EE2] font-medium py-3 transition-colors"
+                  className=" bg-[#2B3089] dark:bg-[#1D9EE2] text-white dark:text-gray-200 rounded-lg text-center hover:text-[#2B3089] dark:hover:text-[#1D9EE2] font-medium py-3 transition-colors"
                 >
                   Log In
                 </Link>

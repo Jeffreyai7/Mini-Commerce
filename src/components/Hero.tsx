@@ -24,10 +24,10 @@ const Hero = () => {
         {
           carouselInfo.map((item, index) => (
             <CarouselItem key={index} className="relative">
-              <div className='flex flex-col md:flex-row items-center justify-between w-[60%] mx-auto gap-4 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg'>
-                <div className='flex flex-col gap-2'>
-                  <span className='text-lg font-semibold'>{item.title}</span>
-                  <p className='text-4xl'>{item.description}</p>
+              <div className='flex flex-col md:flex-row items-center justify-between md:w-[60%] w-full mx-auto gap-4 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg'>
+                <div className='flex flex-col gap-4'>
+                  <span className='md:text-lg text-[0.8rem] font-semibold'>{item.title}</span>
+                  <p className='md:text-4xl text-[1rem]'>{item.description}</p>
                   <Button className='bg-[#2B3089] w-[200px]'>Shop Now</Button>
                 </div>
                 <div className='w-[200px] h-[200px] md:w-[300px] md:h-[300px]'>

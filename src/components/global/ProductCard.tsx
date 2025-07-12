@@ -14,7 +14,6 @@ import { useRouter } from 'next/navigation';
 
 const ProductCard = ( product : Product) => {
 const router = useRouter();
-  const handleAddToCart = () => {}
 
   // click handler for view details
   const handleViewDetails = (slug: string) => {
@@ -36,8 +35,8 @@ const router = useRouter();
           </div>
         </CardContent>
         <CardFooter>
-          <CardAction className="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600 cursor-pointer">
-            Add to Cart
+          <CardAction onClick={() => handleViewDetails(product.slug)} className="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600 cursor-pointer">
+            Buy Now
           </CardAction>
         </CardFooter>
       </Card>

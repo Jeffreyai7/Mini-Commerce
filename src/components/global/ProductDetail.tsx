@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
 
-const ProductDetail = () => {
+const ProductDetailContent = (product: Product) => {
   return (
     <div>
         <div>
@@ -9,8 +9,9 @@ const ProductDetail = () => {
         </div>
         <div>
             <div>
-            <p>Company</p>
-            <h1>description</h1>
+            <span>Company</span>
+            <h1>{product.name}</h1>
+            <p>{product.description}</p>
             <span>${product.price.toFixed(2)}</span>
 
         </div>
@@ -27,4 +28,4 @@ const ProductDetail = () => {
   )
 }
 
-export default ProductDetail
+export default ProductDetailContent

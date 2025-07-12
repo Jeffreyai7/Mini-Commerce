@@ -6,3 +6,9 @@ declare type Product = {
   image: string;
   description: string;
 }
+
+declare type PageProps = {
+  params: {
+    slug: string;
+  };
+};

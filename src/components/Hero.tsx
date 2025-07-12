@@ -20,7 +20,7 @@ const Hero = () => {
         }),
       ]}
     >
-      <CarouselContent className="h-[500px] md:h-[600px] p-3 mt-4">
+      <CarouselContent className="my-4">
         {
           carouselInfo.map((item, index) => (
             <CarouselItem key={index} className="relative">
@@ -30,7 +30,7 @@ const Hero = () => {
                   <p className='md:text-4xl text-[1rem]'>{item.description}</p>
                   <Button className='bg-[#2B3089] w-[200px]'>Shop Now</Button>
                 </div>
-                <div className='w-[200px] h-[200px] md:w-[300px] md:h-[300px]'>
+                <div className='w-full md:w-[300px] h-[300px] md:h-[400px] overflow-hidden rounded-lg shadow-md'>
                   <img
                     src={item.image}
                     alt={`Hero Image ${index + 1}`}

@@ -3,10 +3,11 @@ import ProductContainer from '@/components/homepage/ProductContainer'
 import React from 'react'
 
 const Home = () => {
+  const page="Popular Products";
   return (
     <section>
       <Hero/>
-      <ProductContainer/>
+      <ProductContainer page={page} />
       {/* Add more components or content as needed */}
     </section>
   )

@@ -20,7 +20,7 @@ const Hero = () => {
         }),
       ]}
     >
-      <CarouselContent className="h-[500px] md:h-[600px] p-3 my-4">
+      <CarouselContent className="h-[500px] md:h-[600px] p-3 mt-4">
         {
           carouselInfo.map((item, index) => (
             <CarouselItem key={index} className="relative">

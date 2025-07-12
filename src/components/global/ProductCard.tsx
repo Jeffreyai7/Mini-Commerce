@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import Image from 'next/image';
+import { truncateText } from '@/lib/utils';
 
 const ProductCard = ( product : Product) => {
   return (
@@ -16,10 +16,10 @@ const ProductCard = ( product : Product) => {
       <Card className="w-full max-w-sm mx-auto">
         <CardHeader>
           <CardTitle>{product.name}</CardTitle>
-          <CardDescription>{product.description}</CardDescription>
+          <CardDescription>{truncateText(product.description, 50)}</CardDescription>
         </CardHeader>
         <CardContent>
-          <Image src={product.image} alt={product.name} width={100} height={100} className="object-cover rounded-md" />
+          <img src={product.image} alt={product.name} className="object-cover w-28 h-28 rounded-md" />
         </CardContent>
         <CardFooter>
           <CardAction className="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600">

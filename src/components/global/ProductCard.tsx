@@ -8,17 +8,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import Image from 'next/image';
 
-const ProductCard = () => {
+const ProductCard = ( product : Product) => {
   return (
     <div>
       <Card className="w-full max-w-sm mx-auto">
         <CardHeader>
-          <CardTitle>Product Title</CardTitle>
-          <CardDescription>Product description goes here.</CardDescription>
+          <CardTitle>{product.name}</CardTitle>
+          <CardDescription>{product.description}</CardDescription>
         </CardHeader>
         <CardContent>
-          <img src="/images/product.jpg" alt="Product Image" className="w-full h-48 object-cover rounded-md" />
+          <Image src={product.image} alt={product.name} width={100} height={100} className="object-cover rounded-md" />
         </CardContent>
         <CardFooter>
           <CardAction className="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600">

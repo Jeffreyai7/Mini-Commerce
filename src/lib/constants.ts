@@ -14,7 +14,7 @@ export const footerLinks = [
   { name: "Contact Us", href: '/contact-us' }
 ];
 
-export const carouselInfo = [
+export const  carouselInfo = [
   {
     title: "Hurry up few items left",
     description: "Get yours before they're gone!",

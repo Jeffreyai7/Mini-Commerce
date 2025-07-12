@@ -4,7 +4,7 @@
     "name": "Silhoutte",
     "slug": "silhoutte",
     "price": 59.99,
-    "image": "/images/product5.jpg",
+    "image": "/images/product5.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
   
@@ -13,7 +13,7 @@
     "name": "Sneakers",
     "slug": "sneakers",
     "price": 59.99,
-    "image": "/images/product6.jpg",
+    "image": "/images/product6.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
   
@@ -22,7 +22,7 @@
     "name": "Silhoutte Blue",
     "slug": "silhoutte-blue",
     "price": 59.99,
-    "image": "/images/product7.jpg",
+    "image": "/images/product7.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
   
@@ -31,7 +31,7 @@
     "name": "Trainers",
     "slug": "trainers",
     "price": 59.99,
-    "image": "/images/product8.jpg",
+    "image": "/images/product8.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
   
@@ -40,7 +40,7 @@
     "name": "leather boots",
     "slug": "leatherboots",
     "price": 59.99,
-    "image": "/images/product11.jpg",
+    "image": "/images/product11.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
   {
@@ -48,7 +48,7 @@
     "name": "loafers",
     "slug": "loafers",
     "price": 59.99,
-    "image": "/images/product22.jpg",
+    "image": "/images/product22.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
   {
@@ -56,7 +56,7 @@
     "name": "Macluaren",
     "slug": "macluaren",
     "price": 59.99,
-    "image": "/images/product33.jpg",
+    "image": "/images/product33.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
   
@@ -65,7 +65,7 @@
     "name": "Nike Airforce",
     "slug": "nike-airforce",
     "price": 59.99,
-    "image": "/images/product44.jpg",
+    "image": "/images/product4.jpg",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   }
   

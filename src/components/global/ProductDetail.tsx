@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label';
 import toast from 'react-hot-toast';
 import { useProducts } from '@/hooks/useProducts';
 import { useParams } from 'next/navigation';
+import LoadingComponent from './LoadingComponent';
+import ErrorComponent from './ErrorComponent';
 
 type PageProps = {
   slug: string;
@@ -21,8 +23,8 @@ const ProductDetailContent = () => {
   const { data: products, isLoading, isError } = useProducts();
 
   // handle loading or error
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error loading product</div>;
+  if (isLoading) return <LoadingComponent />;
+  if (isError) return <ErrorComponent />;
 
   // access product AFTER loading and error are false
   const product = products?.find((p) => p.slug === slug);

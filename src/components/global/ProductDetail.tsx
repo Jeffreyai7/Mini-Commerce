@@ -5,22 +5,34 @@ import { useCartStore } from '@/store';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import toast from 'react-hot-toast';
+import { useProducts } from '@/hooks/useProducts';
+import { useParams } from 'next/navigation';
 
-type Props = {
-  product: Product;
+type PageProps = {
+  slug: string;
 };
 
-const ProductDetailContent = ( { product }: Props) => {
-  const { addToCart } = useCartStore();
-  const [quantity, setQuantity] = useState<number>(1);
+const ProductDetailContent = ( ) => {
+    const { slug } = useParams<PageProps>();
+    const { addToCart } = useCartStore();
+    const [quantity, setQuantity] = useState<number>(1);
+        
+    const { data: products, isLoading, isError } = useProducts();
+    
+      const product = products!.find((p) => p.slug === slug);
+    
+
+      if (!product) return <div>Product not found</div>;
 
   const handleAddToCart = () => {
     if (quantity < 1) return;
-
+    
     addToCart({ ...product, quantity });
     toast.success(`${quantity} ${product.name}(s) added to cart`);
-  };
+};
 
+       if (isLoading) return <div>Loading...</div>;
+      if (isError) return <div>Error loading product</div>;
   return (
     <div className='flex flex-col md:flex-row md:w-[80%] mx-auto gap-8'>
       <div className="relative w-full sm:w-1/2 md:w-1/3 aspect-square">

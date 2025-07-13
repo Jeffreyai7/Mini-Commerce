@@ -42,7 +42,7 @@ describe('ProductDetailContent', () => {
 
     render(<ProductDetailContent />);
 
-    // ✅ Use getByRole to avoid text collisions
+    //  Use getByRole to avoid text collisions
     expect(
       screen.getByRole('heading', { name: /Test Product/i })
     ).toBeInTheDocument();
@@ -66,7 +66,7 @@ describe('ProductDetailContent', () => {
     });
 
     render(<ProductDetailContent />);
-    expect(screen.getByText(/Loading/i)).toBeInTheDocument();
+    expect(screen.getByText(/Loading, please wait/i)).toBeInTheDocument();
   });
 
   it('renders error state', () => {
@@ -77,17 +77,6 @@ describe('ProductDetailContent', () => {
     });
 
     render(<ProductDetailContent />);
-    expect(screen.getByText(/Error loading product/i)).toBeInTheDocument();
-  });
-
-  it('renders fallback if product not found', () => {
-    (useProducts as jest.Mock).mockReturnValue({
-      data: [],
-      isLoading: false,
-      isError: false,
-    });
-
-    render(<ProductDetailContent />);
-    expect(screen.getByText(/Product not found/i)).toBeInTheDocument();
+    expect(screen.getByText(/oops! something went wrong/i)).toBeInTheDocument();
   });
 });

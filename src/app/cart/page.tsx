@@ -2,9 +2,11 @@
 'use client';
 import { useCartStore } from '@/store';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function CartPage() {
   const { items, removeFromCart, updateQuantity, total } = useCartStore();
+  const router = useRouter();
 
   if (items.length === 0) {
     return <div className="p-4 text-center">🛒 Your cart is empty.</div>;
@@ -63,6 +65,14 @@ export default function CartPage() {
         <h2 className="text-xl font-bold">
           Total: ₦{total().toFixed(2)}
         </h2>
+      </div>
+      <div>
+        <button
+          className="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition cursor-pointer"
+          onClick={() => router.push('/checkout')}
+        >
+          Proceed to Checkout
+        </button>
       </div>
     </div>
   );

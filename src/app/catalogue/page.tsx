@@ -1,14 +1,13 @@
-import ProductContainer from '@/components/homepage/ProductContainer'
-import React from 'react'
-
+import ProductContainer from '@/components/homepage/ProductContainer';
+import React from 'react';
 
 const Catalogue = () => {
-    const page = "All Products";
+  const page = 'All Products';
   return (
     <div>
-        <ProductContainer page={page} />
+      <ProductContainer page={page} />
     </div>
-  )
-}
+  );
+};
 
-export default Catalogue
+export default Catalogue;

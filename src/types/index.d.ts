@@ -5,7 +5,7 @@ declare type Product = {
   price: number;
   image: string;
   description: string;
-}
+};
 
 declare type PageProps = {
   params: {

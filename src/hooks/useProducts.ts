@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 
-
 const fetchProducts = async (): Promise<Product[]> => {
   const cached = localStorage.getItem('products-v2');
   if (cached) return JSON.parse(cached);

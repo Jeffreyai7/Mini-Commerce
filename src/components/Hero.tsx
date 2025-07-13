@@ -1,19 +1,17 @@
-"use client"
-import React from 'react'
-import Autoplay from "embla-carousel-autoplay"
+'use client';
+import React from 'react';
+import Autoplay from 'embla-carousel-autoplay';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel"
-import { Button } from './ui/button'
-import { carouselInfo } from '@/lib/constants'
-
-
+} from '@/components/ui/carousel';
+import { Button } from './ui/button';
+import { carouselInfo } from '@/lib/constants';
 
 const Hero = () => {
   return (
-   <Carousel
+    <Carousel
       plugins={[
         Autoplay({
           delay: 3000,
@@ -21,29 +19,29 @@ const Hero = () => {
       ]}
     >
       <CarouselContent className="my-4">
-        {
-          carouselInfo.map((item, index) => (
-            <CarouselItem key={index} className="relative">
-              <div className='flex flex-col md:flex-row items-center justify-between md:w-[70%] w-full mx-auto gap-4 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg'>
-                <div className='flex flex-col gap-4'>
-                  <span className='md:text-lg text-[0.8rem] font-semibold'>{item.title}</span>
-                  <p className='md:text-4xl text-[1rem]'>{item.description}</p>
-                  <Button className='bg-[#2B3089] w-[200px]'>Shop Now</Button>
-                </div>
-                <div className='w-full md:w-[300px] h-[300px] md:h-[400px] overflow-hidden rounded-lg shadow-md'>
-                  <img
-                    src={item.image}
-                    alt={`Hero Image ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+        {carouselInfo.map((item, index) => (
+          <CarouselItem key={index} className="relative">
+            <div className="mx-auto flex w-full flex-col items-center justify-between gap-4 rounded-lg bg-white p-6 shadow-lg md:w-[70%] md:flex-row dark:bg-gray-800">
+              <div className="flex flex-col gap-4">
+                <span className="text-[0.8rem] font-semibold md:text-lg">
+                  {item.title}
+                </span>
+                <p className="text-[1rem] md:text-4xl">{item.description}</p>
+                <Button className="w-[200px] bg-[#2B3089]">Shop Now</Button>
               </div>
-            </CarouselItem>
-          ))
-        }
+              <div className="h-[300px] w-full overflow-hidden rounded-lg shadow-md md:h-[400px] md:w-[300px]">
+                <img
+                  src={item.image}
+                  alt={`Hero Image ${index + 1}`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </CarouselItem>
+        ))}
       </CarouselContent>
     </Carousel>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

@@ -7,7 +7,7 @@
     "image": "/images/product5.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
-  
+
   {
     "id": "2",
     "name": "Sneakers",
@@ -16,7 +16,7 @@
     "image": "/images/product6.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
-  
+
   {
     "id": "3",
     "name": "Silhoutte Blue",
@@ -25,7 +25,7 @@
     "image": "/images/product7.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
-  
+
   {
     "id": "4",
     "name": "Trainers",
@@ -34,7 +34,7 @@
     "image": "/images/product8.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
-  
+
   {
     "id": "5",
     "name": "leather boots",
@@ -59,7 +59,7 @@
     "image": "/images/product33.png",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   },
-  
+
   {
     "id": "8",
     "name": "Nike Airforce",
@@ -68,6 +68,4 @@
     "image": "/images/product4.jpg",
     "description": "A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth."
   }
-  
-  
 ]

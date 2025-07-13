@@ -1,4 +1,4 @@
-import Hero from '@/components/Hero';
+import Hero from '@/components/global/Hero';
 import ProductContainer from '@/components/homepage/ProductContainer';
 import React from 'react';
 

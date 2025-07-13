@@ -1,13 +1,10 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-interface CartItem extends Product {
-  quantity: number;
-}
 
 interface StoreState {
-  items: CartItem[];
-  addToCart: (item: CartItem) => void;
+  items: Product[];
+  addToCart: (item: Product) => void;
   removeFromCart: (id: string) => void;
   updateQuantity: (id: string, quantity: number) => void;
   clearCart: () => void;

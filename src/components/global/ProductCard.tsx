@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 import {
   Card,
@@ -15,39 +16,42 @@ import { useRouter } from 'next/navigation';
 const ProductCard = (product: Product) => {
   const router = useRouter();
 
-  // click handler for view details
   const handleViewDetails = (slug: string) => {
     router.push(`/product/${slug}`);
   };
 
   return (
     <div>
-      <Card className="mx-auto w-full max-w-sm">
+      <Card className="border-border bg-card mx-auto w-full max-w-sm rounded-xl border shadow-md transition hover:shadow-lg">
         <CardHeader>
-          <CardTitle>{product.name}</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-foreground text-xl">
+            {product.name}
+          </CardTitle>
+          <CardDescription className="text-muted-foreground">
             {truncateText(product.description, 50)}
           </CardDescription>
         </CardHeader>
+
         <CardContent>
           <div
             onClick={() => handleViewDetails(product.slug)}
-            className="flex cursor-pointer items-center justify-between transition-transform duration-200 hover:scale-105"
+            className="flex cursor-pointer items-center justify-between transition-transform duration-200 hover:scale-[1.03]"
           >
             <img
               src={product.image}
               alt={product.name}
-              className="h-28 w-28 rounded-md object-cover"
+              className="border-border h-28 w-28 rounded-lg border object-cover"
             />
-            <span className="ml-4 text-[2rem] font-semibold">
-              ${product.price.toFixed(2)}
+            <span className="text-primary ml-4 text-xl font-semibold">
+              ₦{product.price.toFixed(2)}
             </span>
           </div>
         </CardContent>
+
         <CardFooter>
           <CardAction
             onClick={() => handleViewDetails(product.slug)}
-            className="cursor-pointer rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            className="bg-primary hover:bg-primary/90 w-full cursor-pointer rounded-lg px-4 py-2 text-center text-white transition"
           >
             Buy Now
           </CardAction>

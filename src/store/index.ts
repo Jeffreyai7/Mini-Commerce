@@ -10,6 +10,7 @@ interface StoreState {
   addToCart: (item: CartItem) => void;
   removeFromCart: (id: string) => void;
   clearCart: () => void;
+  total: () => number;
 }
 
 
@@ -37,7 +38,12 @@ const useCartStore = create<StoreState>()(
             },
             removeFromCart: (id) => set({ items: get().items.filter((item) => item.id !== id) }),
             clearCart: () => set({ items: [] }),
-        }),
+             total: () =>
+                 get().items.reduce(
+                (acc, item) => acc + item.price * item.quantity,
+                0
+                ),
+            }),
         {
             name: 'cart-storage', // unique name for storage key
         }

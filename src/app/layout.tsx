@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/homepage/Navbar";
 import Footer from "@/components/homepage/Footer";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -69,6 +70,7 @@ export default function RootLayout({
       <ReactQueryProvider>
         <Header/>
         {children}
+         <Toaster position="top-right" />
         <Footer/>
       </ReactQueryProvider>
       </body>

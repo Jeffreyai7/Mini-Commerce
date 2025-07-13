@@ -1,12 +1,13 @@
 'use client';
 import React from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, ShoppingBasket, X } from 'lucide-react';
 import Link from 'next/link';
-import { useNavbarStore } from '@/store';
+import { useCartStore, useNavbarStore } from '@/store';
 import { navLinks } from '@/lib/constants';
 
 const Header: React.FC = () => {
   const { isMenuOpen, toggleMenu } = useNavbarStore();
+  const { items } = useCartStore();
 
   return (
     <header className="sticky top-0 right-0 left-0 z-50 bg-white py-2 shadow-md transition-all duration-300 dark:bg-gray-900 dark:shadow-gray-800">
@@ -31,6 +32,10 @@ const Header: React.FC = () => {
                 {link.name}
               </Link>
             ))}
+            <div>
+              <span className="">{items.length}</span>
+              <ShoppingBasket />
+            </div>
           </nav>
 
           <div className="hidden items-center space-x-4 md:flex">

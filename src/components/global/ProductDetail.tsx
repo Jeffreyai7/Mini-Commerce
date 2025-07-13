@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useCartStore } from '@/store';
@@ -19,19 +20,20 @@ const ProductDetailContent = () => {
 
   const { data: products, isLoading, isError } = useProducts();
 
-  const product = products!.find((p) => p.slug === slug);
+  // handle loading or error
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error loading product</div>;
 
+  // access product AFTER loading and error are false
+  const product = products?.find((p) => p.slug === slug);
   if (!product) return <div>Product not found</div>;
 
   const handleAddToCart = () => {
     if (quantity < 1) return;
-
     addToCart({ ...product, quantity });
     toast.success(`${quantity} ${product.name}(s) added to cart`);
   };
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error loading product</div>;
   return (
     <div className="mx-auto flex flex-col gap-8 md:w-[80%] md:flex-row">
       <div className="relative aspect-square w-full sm:w-1/2 md:w-1/3">

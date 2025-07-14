@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Silhoutte",
+    "slug": "silhoutte",
+    "price": 100.99,
+    "image": "/images/product5.png",
+    "description": "A minimalist low-top sneaker designed for everyday comfort and clean urban style. Pairs perfectly with jeans or joggers.",
+    "quantity": 1
+  },
+  {
+    "id": "2",
+    "name": "Sneakers",
+    "slug": "sneakers",
+    "price": 123.99,
+    "image": "/images/product6.png",
+    "description": "Classic sneakers with breathable mesh and a rubber sole that supports all-day wear — stylish, light, and dependable.",
+    "quantity": 1
+  },
+  {
+    "id": "3",
+    "name": "Silhoutte Blue",
+    "slug": "silhoutte-blue",
+    "price": 59.99,
+    "image": "/images/product7.png",
+    "description": "A bold twist on the Silhoutte design, this blue edition adds a splash of personality while maintaining comfort and class.",
+    "quantity": 1
+  },
+  {
+    "id": "4",
+    "name": "Trainers",
+    "slug": "trainers",
+    "price": 67.99,
+    "image": "/images/product8.png",
+    "description": "Lightweight performance trainers engineered for flexibility and support — ideal for gym sessions or casual runs.",
+    "quantity": 1
+  },
+  {
+    "id": "5",
+    "name": "Leather Boots",
+    "slug": "leatherboots",
+    "price": 99.99,
+    "image": "/images/product11.png",
+    "description": "Premium leather boots with a rugged sole and a refined finish — perfect for both urban adventures and outdoor wear.",
+    "quantity": 1
+  },
+  {
+    "id": "6",
+    "name": "Loafers",
+    "slug": "loafers",
+    "price": 89.99,
+    "image": "/images/product22.png",
+    "description": "Slip into style with these versatile loafers — crafted with soft suede and a padded insole for all-day comfort.",
+    "quantity": 1
+  },
+  {
+    "id": "7",
+    "name": "Macluaren",
+    "slug": "macluaren",
+    "price": 99.99,
+    "image": "/images/product33.png",
+    "description": "A luxury sneaker inspired by speed and performance — sharp design meets cushioned sole for standout streetwear.",
+    "quantity": 1
+  },
+  {
+    "id": "8",
+    "name": "Nike Airforce",
+    "slug": "nike-airforce",
+    "price": 69.99,
+    "image": "/images/product4.jpg",
+    "description": "Timeless Nike Airforce style with premium materials and iconic silhouette. Street-tested, legend-approved.",
+    "quantity": 1
+  }
+]

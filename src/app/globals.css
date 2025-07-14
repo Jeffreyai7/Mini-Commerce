@@ -1,26 +1,97 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  color: white;
+  width: 100%;
+  height: 100vh;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.animate-spin {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: spin 1s ease infinite;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Base */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --radius: 0.5rem;
+
+    /* Cards & Popovers */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary Branding Color */
+    --primary: 212 100% 47%; /* Blue */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary Accent */
+    --secondary: 30 100% 50%; /* Orange */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted & Neutral */
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 35%;
+
+    /* Accent (for badges, buttons, tags) */
+    --accent: 174 60% 40%; /* Teal green */
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive actions (delete, warnings) */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Borders & Inputs */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 212 100% 47%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
+
+    --card: 222 47% 13%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 212 100% 70%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 30 100% 60%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 215 25% 25%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 174 70% 45%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
+    --ring: 212 100% 70%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }

@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-
 interface StoreState {
   items: Product[];
   addToCart: (item: Product) => void;
@@ -23,16 +22,20 @@ const useCartStore = create<StoreState>()(
       addToCart: (product) => {
         const items = get().items;
         const existing = items.find((item) => item.id === product.id);
+
         if (existing) {
+          // 🟢 add the incoming quantity instead of hard‑coded +1
           set({
             items: items.map((item) =>
               item.id === product.id
-                ? { ...item, quantity: item.quantity + 1 }
+                ? { ...item, quantity: item.quantity + product.quantity }
                 : item
             ),
           });
         } else {
-          set({ items: [...items, { ...product, quantity: 1 }] });
+          set({
+            items: [...items, { ...product, quantity: product.quantity || 1 }],
+          });
         }
       },
       removeFromCart: (id) =>

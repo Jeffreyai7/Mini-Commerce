@@ -11,7 +11,10 @@ const CheckoutContent = () => {
   const handlePlaceOrder = () => {
     const orderId = Math.floor(100000 + Math.random() * 900000).toString();
     router.push(`/success?orderId=${orderId}`);
-    clearCart();
+    // Wait 2 seconds before clearing cart to prevent a wrong fallback state
+    setTimeout(() => {
+      clearCart();
+    }, 2000);
   };
 
   return (

@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { useCartStore } from '@/store';
@@ -14,28 +15,24 @@ type PageProps = {
 
 const ProductDetailContent = () => {
   const { slug } = useParams<PageProps>();
-  const { addToCart, updateQuantity } = useCartStore();
+  const { addToCart } = useCartStore();
 
   const { data: products, isLoading, isError } = useProducts();
+  const [quantity, setQuantity] = useState<number>(1);
 
   if (isLoading) return <LoadingComponent />;
   if (isError) return <ErrorComponent />;
 
   const product = products?.find((p) => p.slug === slug);
-  if (!product)
-    return (
-      <div className="text-center text-destructive">Product not found</div>
-    );
-  const cartItem = useCartStore((state) =>
-    state.items.find((i) => i.id === product.id)
-  );
+  if (!product) {
+    return toast.error('Product not found');
+  }
 
-  const quantity = cartItem?.quantity ?? 1;
   const handleAddToCart = () => {
-    if (product.quantity < 1) return;
-    addToCart(product);
-    toast.success(`${product.quantity} ${product.name}(s) added to cart`);
-    console.log('i clicked');
+    if (quantity < 1) return;
+
+    addToCart({ ...product, quantity });
+    toast.success(`${quantity} ${product.name}(s) added to cart`);
   };
 
   return (
@@ -66,12 +63,11 @@ const ProductDetailContent = () => {
         </div>
 
         <div className="flex flex-col gap-4">
+          {/* Quantity Controls */}
           <div className="mt-2 flex items-center gap-2">
             <button
               className="rounded-md bg-muted px-3 py-1 text-foreground hover:bg-muted/80"
-              onClick={() =>
-                updateQuantity(product.id, Math.max(1, quantity - 1))
-              }
+              onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
             >
               −
             </button>
@@ -80,11 +76,12 @@ const ProductDetailContent = () => {
             </span>
             <button
               className="rounded-md bg-muted px-3 py-1 text-foreground hover:bg-muted/80"
-              onClick={() => updateQuantity(product.id, quantity + 1)}
+              onClick={() => setQuantity((prev) => prev + 1)}
             >
               +
             </button>
           </div>
+
           <button
             className="rounded-lg bg-primary px-6 py-2 text-white transition hover:bg-primary/90"
             onClick={handleAddToCart}

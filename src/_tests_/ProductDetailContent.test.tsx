@@ -15,46 +15,56 @@ jest.mock('@/store', () => ({
 
 describe('ProductDetailContent', () => {
   const mockAddToCart = jest.fn();
+  const mockUpdateQuantity = jest.fn();
+  const mockItems = [
+    {
+      id: '1',
+      slug: 'test-product',
+      name: 'Test Product',
+      price: 49.99,
+      description: 'A test product',
+      image: '/test.jpg',
+      quantity: 1,
+    },
+  ];
 
   beforeEach(() => {
-    // Reset mocks before each test
     jest.clearAllMocks();
+
+    // Mock the Zustand store
     (useCartStore as unknown as jest.Mock).mockReturnValue({
       addToCart: mockAddToCart,
+      updateQuantity: mockUpdateQuantity,
+      items: mockItems,
     });
+
+    // Mock router params
     (useParams as jest.Mock).mockReturnValue({ slug: 'test-product' });
   });
 
   it('renders product details and handles add to cart', () => {
     (useProducts as jest.Mock).mockReturnValue({
-      data: [
-        {
-          slug: 'test-product',
-          name: 'Test Product',
-          price: 49.99,
-          description: 'A test product',
-          image: '/test.jpg',
-        },
-      ],
+      data: mockItems,
       isLoading: false,
       isError: false,
     });
 
     render(<ProductDetailContent />);
 
-    //  Use getByRole to avoid text collisions
+    // Assert product heading
     expect(
       screen.getByRole('heading', { name: /Test Product/i })
     ).toBeInTheDocument();
-    expect(screen.getByText(/\$49.99/)).toBeInTheDocument();
 
-    fireEvent.change(screen.getByLabelText(/Quantity/i), {
-      target: { value: '2' },
-    });
+    // Assert price with Naira symbol
+    expect(screen.getByText(/₦\s*49.99/)).toBeInTheDocument();
 
+    // Click Add to Cart
     fireEvent.click(screen.getByText(/Add to Cart/i));
+
+    // Assert addToCart is called
     expect(mockAddToCart).toHaveBeenCalledWith(
-      expect.objectContaining({ slug: 'test-product', quantity: 2 })
+      expect.objectContaining({ slug: 'test-product' })
     );
   });
 

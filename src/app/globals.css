@@ -30,11 +30,11 @@ body {
     --popover-foreground: 222 47% 11%;
 
     /* Primary Branding Color */
-    --primary: 212 100% 47%;        /* Blue */
+    --primary: 212 100% 47%; /* Blue */
     --primary-foreground: 0 0% 100%;
 
     /* Secondary Accent */
-    --secondary: 30 100% 50%;       /* Orange */
+    --secondary: 30 100% 50%; /* Orange */
     --secondary-foreground: 0 0% 100%;
 
     /* Muted & Neutral */
@@ -42,7 +42,7 @@ body {
     --muted-foreground: 215 15% 35%;
 
     /* Accent (for badges, buttons, tags) */
-    --accent: 174 60% 40%;          /* Teal green */
+    --accent: 174 60% 40%; /* Teal green */
     --accent-foreground: 0 0% 100%;
 
     /* Destructive actions (delete, warnings) */
@@ -53,13 +53,6 @@ body {
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 212 100% 47%;
-
-    /* Charts/Analytics Colors */
-    --chart-1: 220 90% 56%;
-    --chart-2: 140 70% 45%;
-    --chart-3: 45 100% 55%;
-    --chart-4: 280 80% 60%;
-    --chart-5: 350 70% 55%;
   }
 
   .dark {
@@ -90,12 +83,6 @@ body {
     --border: 222 25% 20%;
     --input: 222 25% 20%;
     --ring: 212 100% 70%;
-
-    --chart-1: 212 100% 70%;
-    --chart-2: 140 70% 60%;
-    --chart-3: 45 100% 70%;
-    --chart-4: 280 80% 75%;
-    --chart-5: 350 70% 70%;
   }
 }
 

@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: 'Mini Commerce - Premium Footwear Store',
     description:
       'Shop the latest sneakers, trainers, and boots with fast delivery and secure checkout.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/og-image.png'],
     creator: '@MiniCommerce',
   },
 
@@ -70,11 +70,11 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/favicon.ico', type: 'image/x-icon' },
     ],
-    apple: { url: '/apple-touch-icon.png', sizes: '180x180' },
+    apple: { url: '/images/apple-touch-icon.png', sizes: '180x180' },
   },
 
   manifest: '/site.webmanifest',

@@ -4,7 +4,10 @@ import { footerLinks } from '@/lib/constants';
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-border bg-background text-foreground">
+    <footer
+      id="#contact"
+      className="w-full border-t border-border bg-background text-foreground"
+    >
       <div className="container mx-auto grid grid-cols-1 gap-10 px-4 py-12 md:grid-cols-3 md:px-6">
         {/* Logo and Description */}
         <div>

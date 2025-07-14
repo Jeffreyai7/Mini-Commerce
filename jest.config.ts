@@ -13,8 +13,9 @@ const customJestConfig = {
   },
   testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
-  },
+  '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { configFile: './jest.babel.config.js' }],
+}
+
 };
 
 module.exports = createJestConfig(customJestConfig);

@@ -11,7 +11,6 @@ interface ProductContainerProps {
 
 const ProductContainer = ({ page }: ProductContainerProps) => {
   const { data: products, isLoading, isError } = useProducts();
-  console.log(products);
 
   if (isLoading)
     return (

@@ -3,6 +3,7 @@ import { useCartStore } from '@/store';
 import { useRouter } from 'next/navigation';
 import CartContent from '@/components/cart/Cart';
 
+// Mocks
 jest.mock('@/store', () => ({
   useCartStore: jest.fn(),
 }));
@@ -19,24 +20,23 @@ describe('CartContent', () => {
   const mockItems = [
     {
       id: '1',
-      slug: 'test-product',
       name: 'Test Shoe',
       price: 50,
-      image: '/test.jpg',
       quantity: 1,
+      image: '/test.jpg',
     },
   ];
 
   beforeEach(() => {
     jest.clearAllMocks();
-    (useRouter as unknown as jest.Mock).mockReturnValue({ push: mockPush });
+    (useRouter as jest.Mock).mockReturnValue({ push: mockPush });
   });
 
-  it('shows empty cart state', () => {
+  it('renders empty state when cart is empty', () => {
     (useCartStore as unknown as jest.Mock).mockReturnValue({
       items: [],
-      removeFromCart: mockRemove,
-      updateQuantity: mockUpdateQty,
+      removeFromCart: jest.fn(),
+      updateQuantity: jest.fn(),
       total: () => 0,
     });
 
@@ -55,20 +55,21 @@ describe('CartContent', () => {
 
     render(<CartContent />);
 
-    // Product info
+    // Check that the cart content is rendered
     expect(
       screen.getByRole('heading', { name: /your cart/i })
     ).toBeInTheDocument();
     expect(screen.getByText(/test shoe/i)).toBeInTheDocument();
-    expect(screen.getByText(/₦50\.00/)).toBeInTheDocument();
 
-    // Quantity controls
-    const plusBtn = screen.getByText('+');
-    fireEvent.click(plusBtn);
+    // There are 3 occurrences of ₦50.00 — unit price, subtotal, total
+    expect(screen.getAllByText(/₦50\.00/)).toHaveLength(3);
+
+    // Quantity +
+    fireEvent.click(screen.getByText('+'));
     expect(mockUpdateQty).toHaveBeenCalledWith('1', 2);
 
-    const minusBtn = screen.getByText('−');
-    fireEvent.click(minusBtn);
+    // Quantity −
+    fireEvent.click(screen.getByText('−'));
     expect(mockUpdateQty).toHaveBeenCalledWith('1', 1);
 
     // Remove

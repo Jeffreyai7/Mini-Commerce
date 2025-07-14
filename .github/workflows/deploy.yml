@@ -1,0 +1,45 @@
+name: CI
+
+# ────────────────────────────────────────────────
+# Triggers – run on every push & pull‑request
+# ────────────────────────────────────────────────
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    # Speed up installs by caching ~/.npm & next.js build cache
+    # Cache key changes when package-lock.json changes
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # ─────────────── Linting  ───────────────
+      - name: Run ESLint
+        run: npm run lint
+
+      # ───────────── Prettier format check ─────────────
+      - name: Run Prettier (check mode)
+        run: npm run format:check
+
+      # ─────────────── Unit / component tests ───────────────
+      - name: Run Jest tests
+        run: npm test -- --ci
+
+      # ─────────────── Build (optional but recommended) ───────────────
+      - name: Build Next.js site
+        run: npm run build

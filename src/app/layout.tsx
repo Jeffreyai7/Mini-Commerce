@@ -35,7 +35,12 @@ export const metadata: Metadata = {
     'buy shoes online',
   ],
 
-  authors: [{ name: 'Mini Commerce Developers', url: 'https://example.ng' }],
+  authors: [
+    {
+      name: 'Mini Commerce Developers',
+      url: 'https://mini-commerce-seven-eta.vercel.app/',
+    },
+  ],
   creator: 'Mini Commerce Team',
   publisher: 'Mini Commerce',
 
@@ -43,7 +48,7 @@ export const metadata: Metadata = {
     title: 'Mini Commerce - Premium Shoe Store',
     description:
       'Shop sneakers, trainers, and boots at Mini Commerce. Top brands, fast delivery, secure checkout.',
-    url: 'https://example.ng',
+    url: 'https://mini-commerce-seven-eta.vercel.app/',
     siteName: 'Mini Commerce',
     type: 'website',
     locale: 'en_NG',
@@ -79,7 +84,7 @@ export const metadata: Metadata = {
 
   manifest: '/site.webmanifest',
 
-  metadataBase: new URL('https://example.ng'),
+  metadataBase: new URL('https://mini-commerce-seven-eta.vercel.app/'),
 };
 
 export default function RootLayout({
@@ -96,8 +101,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Mini Commerce',
-              url: 'https://example.ng',
-              logo: 'https://example.ng/images/logo.jpg',
+              url: 'https://mini-commerce-seven-eta.vercel.app/',
+              logo: 'https://mini-commerce-seven-eta.vercel.app/logo.jpg',
               sameAs: [
                 'https://www.facebook.com/minicommerce',
                 'https://www.instagram.com/minicommerce',

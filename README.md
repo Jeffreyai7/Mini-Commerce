@@ -7,7 +7,7 @@
 
 > A modern, responsive e-commerce demo app built with Next.js 14, Zustand, Tailwind CSS, and TypeScript.
 
-### 🌐 [Live Demo](https://your-deployment-url.vercel.app)
+### 🌐 [Live Demo](https://mini-commerce-seven-eta.vercel.app/)
 
 ---
 

@@ -26,7 +26,11 @@ const ProductDetailContent = () => {
     return (
       <div className="text-center text-destructive">Product not found</div>
     );
+  const cartItem = useCartStore((state) =>
+    state.items.find((i) => i.id === product.id)
+  );
 
+  const quantity = cartItem?.quantity ?? 1;
   const handleAddToCart = () => {
     if (product.quantity < 1) return;
     addToCart(product);
@@ -66,17 +70,17 @@ const ProductDetailContent = () => {
             <button
               className="rounded-md bg-muted px-3 py-1 text-foreground hover:bg-muted/80"
               onClick={() =>
-                updateQuantity(product.id, Math.max(1, product.quantity - 1))
+                updateQuantity(product.id, Math.max(1, quantity - 1))
               }
             >
               −
             </button>
             <span className="px-2 text-sm font-medium text-foreground">
-              {product.quantity}
+              {quantity}
             </span>
             <button
               className="rounded-md bg-muted px-3 py-1 text-foreground hover:bg-muted/80"
-              onClick={() => updateQuantity(product.id, product.quantity + 1)}
+              onClick={() => updateQuantity(product.id, quantity + 1)}
             >
               +
             </button>
